@@ -55,7 +55,7 @@ export class BarComponent implements OnInit {
 
     // Create the Y-axis band scale
     const y = d3.scaleLinear()
-    .domain([0, 200000])
+    .domain([0, 1800000])
     .range([this.height, 0]);
 
     // Draw the Y-axis on the DOM

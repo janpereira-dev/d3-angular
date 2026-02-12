@@ -40,7 +40,7 @@ export class ScatterComponent implements OnInit {
   private drawPlot(): void {
     // Add X axis
     const x = d3.scaleLinear()
-    .domain([2009, 2017])
+    .domain([2018, 2021])
     .range([ 0, this.width ]);
     this.svg.append('g')
     .attr('transform', 'translate(0,' + this.height + ')')
@@ -48,7 +48,7 @@ export class ScatterComponent implements OnInit {
 
     // Add Y axis
     const y = d3.scaleLinear()
-    .domain([0, 200000])
+    .domain([0, 1800000])
     .range([ this.height, 0]);
     this.svg.append('g')
     .call(d3.axisLeft(y));
@@ -59,8 +59,8 @@ export class ScatterComponent implements OnInit {
     .data(this.data)
     .enter()
     .append('circle')
-    .attr('cx', d => x(d.Census))
-    .attr('cy', d => y(d.Population))
+    .attr('cx', d => x(Number(d.Census)))
+    .attr('cy', d => y(Number(d.Population)))
     .attr('r', 7)
     .style('opacity', .5)
     .style('fill', '#69b3a2');
@@ -70,9 +70,9 @@ export class ScatterComponent implements OnInit {
     .data(this.data)
     .enter()
     .append('text')
-    .text(d => d.Framework)
-    .attr('x', d => x(d.Census))
-    .attr('y', d => y(d.Population));
+    .text(d => d.City)
+    .attr('x', d => x(Number(d.Census)))
+    .attr('y', d => y(Number(d.Population)));
   }
 
 }

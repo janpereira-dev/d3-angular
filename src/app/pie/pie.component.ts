@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
-  selector: 'app-pie',
-  templateUrl: './pie.component.html',
-  styleUrls: ['./pie.component.css']
+    selector: 'app-pie',
+    templateUrl: './pie.component.html',
+    styleUrls: ['./pie.component.css'],
+    standalone: false
 })
 export class PieComponent implements OnInit {
 
@@ -82,8 +83,6 @@ export class PieComponent implements OnInit {
     .attr('transform', d => 'translate(' + labelLocation.centroid(d) + ')')
     .style('text-anchor', 'middle')
     .style('font-size', 15);
-    console.log(labelLocation);
-    console.log(pie(this.data));
   }
 
 }

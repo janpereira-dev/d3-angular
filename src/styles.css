@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #f6f9ff;
+  --panel: #ffffff;
+  --surface: #f9fbff;
+  --primary: #7ab7e3;
+  --accent: #9ad3cf;
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f7faff 0%, #eef3ff 100%);
+  font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+}
+
+h1, h2 {
+  font-weight: 700;
+  color: var(--text);
+}
+
+p {
+  color: var(--muted);
+}
+
+figure {
+  margin: 0;
+}
